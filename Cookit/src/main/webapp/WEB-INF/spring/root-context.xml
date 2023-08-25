@@ -21,8 +21,8 @@
 	<!-- SQL 로그를 위한 log4jdbc 라이브러리 관련 커넥션풀 정보 변경(driverClassName, jdbcUrl) -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
-		<property name="jdbcUrl" value="jdbc:log4jdbc:mysql://localhost:3306/fintech3"></property>
-		<property name="username" value="root"></property>
+			<property name="jdbcUrl" value="jdbc:log4jdbc:mysql://itwillbs.com:3306/c3d2212t2_3"></property>
+		<property name="username" value="c3d2212t2"></property>
 		<property name="password" value="1234"></property>
 	</bean>	
 	
