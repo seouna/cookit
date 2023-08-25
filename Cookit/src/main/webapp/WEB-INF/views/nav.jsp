@@ -10,6 +10,7 @@
 <link href="${path }/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/81736b67fc.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="nav-container">
@@ -37,6 +38,10 @@
 <!-- 		        <button class="btn btn-outline-success" type="submit">Search</button> -->
 <!-- 		      </form> -->
 		    </div>
+	        <ul class="nav-ico">
+		        <li><a href="login"><i class="fa-solid fa-user"></i></a></li>
+		        <li><a href="basket"><i class="fa-solid fa-basket-shopping"></i></a></li>
+	        </ul>
 		  </div>
 		</nav>		
 	</div>
