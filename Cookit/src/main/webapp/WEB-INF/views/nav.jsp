@@ -40,7 +40,7 @@
 		    </div>
 	        <ul class="nav-ico">
 		        <li><a href="login"><i class="fa-solid fa-user"></i></a></li>
-		        <li><a href="basket"><i class="fa-solid fa-basket-shopping"></i></a></li>
+		        <li><a href="basket"><i class="fa-solid fa-basket-shopping nav-ico"></i></a></li>
 	        </ul>
 		  </div>
 		</nav>		

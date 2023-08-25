@@ -199,14 +199,14 @@ a{
     position: absolute;
     top: 0;
     left: 0;
-    height: 377px;
+    height: 427px;
     background-image: url(../images/home_main1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
 }
 .home__content_header {
-    margin-bottom: 124px;
+    margin-bottom: 150px;
     padding-top: 15px;
 }
 .home__content_header__title {
