@@ -1,13 +1,147 @@
 @charset "UTF-8";
+
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar-brand{
+	font-family: KCC-Ganpan;
+}
+
+
+.nav-container a{
+	color: #fff!important;
+}
 a{
 	color: #000!important;
 }
-.nav-container{
-	
+.home__bg_content {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 377px;
+    background-image: url(../images/home_main1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.home__content_header {
+    margin-bottom: 124px;
+    padding-top: 15px;
+}
+.home__content_header__title {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.home__content_header__title p {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: -2.1875px;
+    color: #fff;
+    text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25519);
+    transition: all .5s;
+}
+
+.home__content_header__title strong{
+}
+.search__form_box__2 {
+    width: 360px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    height: 45px;
+    margin-bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search__form_box__2 .search__icon__2 {
+    position: absolute;
+    top: 46%;
+    right: 0;
+    margin-right: 18px;
+    margin-top: 1px;
+    z-index: 1;
+    color: #4f5b66;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.search__form_box__2 input#searchText {
+    background: #fff;
+    height: 100%;
+    border: none;
+    float: left;
+    padding-left: 20px;
+    width: 100%;
+    font-size: 0.8rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.home__content_header ul.recent_box {
+    width: 360px;
+    position: absolute;
+    border-radius: 6px;
+    background: white;
+    display: none;
+    z-index: 3;
+    border: 1px solid #ccc;
+}
+
+.home__content_header ul.recent_box li.recent_first_item {
+    color: #636262;
+    font-size: 9pt;
+}
+
+.home__content_header ul.recent_box li {
+    padding-left: 45px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 10pt;
+    text-align: left;
+    color: black;
+    line-height: 42px;
+}
+
+.home__content_header__detail_search a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: -0.65625px;
+    color: #FFFFFF;
+}
+.home__content_header__detail_search a img {
+    margin-top: -5px;
 }
 .container{
 	width: 1200px;
 	margin: 0 auto;
+}
+.container .main-content{
+	padding: 50px 0;
+}
+.recipe-container{
+	
+}
+.card img:hover {
+    opacity: 0.75;
+}
+.card {
+	margin-bottom: 20px;
 }
 nav{
 	margin: 0 auto;
@@ -153,4 +287,81 @@ nav{
     cursor: pointer;
     width: 100%;
     max-width: 100%;
+}
+
+
+.recipeTit h1 {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: 5.85px;
+    font-weight: bold;
+}
+
+.recipeTit h2 {
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: 0px;
+    text-align: center;
+    margin-top: 16px;
+    white-space: pre-line;
+}
+
+.recipeCategory {
+    width: 100%;
+    max-width: 650px;
+    /* margin: 80px 0px 40px; */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    border-top: 1px solid rgb(147, 112, 98);
+    border-left: 1px solid rgb(147, 112, 98);
+    padding: 0;
+    margin: 80px auto;
+}
+
+.selOff {
+    box-sizing: border-box;
+    padding: 12px 8px;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    white-space: nowrap;
+    border-right: 1px solid rgb(147, 112, 98);
+    border-bottom: 1px solid rgb(147, 112, 98);
+    cursor: pointer;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+}
+
+.selOn {
+    box-sizing: border-box;
+    padding: 12px 8px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    white-space: nowrap;
+    border-right: 1px solid rgb(147, 112, 98);
+    border-bottom: 1px solid rgb(147, 112, 98);
+    cursor: pointer;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+    color: rgb(255, 255, 255);
+    background: rgb(117, 87, 75);
 }

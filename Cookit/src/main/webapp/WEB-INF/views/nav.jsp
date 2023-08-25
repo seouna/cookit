@@ -6,13 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>쿠킷!</title>
-<link href="${path }/resources/css/main.css" rel="stylesheet">
 <link href="${path }/resources/css/bootstrap.css" rel="stylesheet">
 <link href="${path }/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="resourrces/js/bootstrap.js"></script>
-<script type="text/javascript" src="resourrces/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="nav-container">
@@ -35,10 +32,10 @@
 		          <a class="nav-link" href="#">마켓</a>
 		        </li>
 		      </ul>
-		      <form class="d-flex" role="search">
-		        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-		        <button class="btn btn-outline-success" type="submit">Search</button>
-		      </form>
+<!-- 		      <form class="d-flex" role="search"> -->
+<!-- 		        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+<!-- 		        <button class="btn btn-outline-success" type="submit">Search</button> -->
+<!-- 		      </form> -->
 		    </div>
 		  </div>
 		</nav>		

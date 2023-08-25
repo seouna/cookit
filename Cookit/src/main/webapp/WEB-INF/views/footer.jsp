@@ -6,9 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link href="${path }/resources/css/inc.css" rel="stylesheet">
-<link href="${path }/resources/css/common.css" rel="stylesheet">
+<title>쿠킷!</title>
+<link href="${path }/resources/css/bootstrap.css" rel="stylesheet">
+<link href="${path }/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<footer class="footer">
