@@ -28,9 +28,13 @@ public class MainController {
 	
 	@GetMapping("/join")
 	public String join() {
-		return "join";
+		return "member/join";
 	}
 
-	
+	@GetMapping("/login")
+	public String login() {
+		return "member/login";
+	}
+
 	
 }

@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>쿠킷</title>
+<link href="${path }/resources/css/common.css" rel="stylesheet">
 <link href="${path }/resources/css/main.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

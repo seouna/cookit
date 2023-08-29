@@ -17,7 +17,7 @@
 	<div class="container">
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="#">C O O K I T</a>
+		    <a class="navbar-brand" href="main">C O O K I T</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -39,8 +39,12 @@
 <!-- 		      </form> -->
 		    </div>
 	        <ul class="nav-ico">
-		        <li><a href="login"><i class="fa-solid fa-user"></i></a></li>
-		        <li><a href="basket"><i class="fa-solid fa-basket-shopping nav-ico"></i></a></li>
+<!-- 	        <i class="fa-solid fa-right-to-bracket"></i> -->
+<!-- 			<i class="fa-solid fa-user"></i> -->
+<!-- 			<i class="fa-solid fa-basket-shopping nav-ico"></i> -->
+		        <li><a href="join">회원가입</a></li>
+		        <li><a href="login">로그인</a></li>
+		        <li><a href="basket">장바구니</a></li>
 	        </ul>
 		  </div>
 		</nav>		
