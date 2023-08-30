@@ -1,10 +1,12 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: 'KCC-Ganpan';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'KCC-Ganpan';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
 }
 /*로그인페이지*/
 * {
@@ -16,17 +18,17 @@ html, body {
 	height: 100%;
 	background: #ffffff;
 }
-.nav-container{
+
+.nav-container {
 	border-bottom: 1px solid #d4d4d4;
 }
-
 
 #container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	height: 60%;
+	height: 70%;
 }
 
 #loginBox {
@@ -49,7 +51,7 @@ html, body {
 }
 
 .button-login-box {
-	margin: 10px 0;
+	margin: 20px 0;
 }
 
 #loginBoxTitle {
@@ -60,7 +62,7 @@ html, body {
 	text-transform: uppercase;
 	padding: 5px;
 	margin-bottom: 20px;
-	background: linear-gradient(to right, #270a09, #8ca6ce);
+	background: linear-gradient(to right, #270a09, #117a8b);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -75,71 +77,79 @@ html, body {
 }
 
 /*회원가입*/
-#joinForm{
-    width: 1040px;
-    margin: 0 auto;
-    padding: 50px 0;
+#joinForm {
+	width: 1040px;
+	margin: 0 auto;
+	padding: 50px 0;
 }
 
-#joinForm .btn{
-    width: 118px;
+#joinForm .btn {
+	width: 118px;
 }
 
-#joinForm h2{
+#joinForm h2 {
 	text-align: center;
 	font-family: KCC-Ganpan;
 }
-#joinForm tr{
-    height: 60px;
+
+#joinForm tr {
+	height: 60px;
 }
 
-#birth-year{
+#birth-year {
 	width: 150px;
 }
-#birth-month{
+
+#birth-month {
 	width: 150px;
 }
-#birth-day{
+
+#birth-day {
 	width: 150px;
 }
-#joinForm .td_left{
+
+#joinForm .td_left {
 	text-align: right;
 	padding-right: 50px;
 }
 
-#joinForm input{
-    border: 1px solid #cccccc;
-    padding: 5px;
-    
+#joinForm input {
+	border: 1px solid #cccccc;
+	padding: 5px;
 }
-#joinForm #id{
+
+#joinForm #id {
 	width: 335px;
 }
 
-#joinForm #name, #joinForm #passwd, #joinForm #passwd2{
+#joinForm #name, #joinForm #passwd, #joinForm #passwd2 {
 	width: 458px;
 }
-#joinForm .email{
+
+#joinForm .email {
 	width: 161px;
 }
 
-#joinForm select{
+#joinForm select {
 	border: 1px solid #cccccc;
-    padding: 6px 10px;
+	padding: 6px 10px;
 }
 
 .joinForm {
 	width: 720px;
-    margin: 0 auto;	
+	margin: 0 auto;
 }
-#btnArea{
+
+#btnArea {
 	text-align: right;
 	padding-top: 20px;
 }
-#btnArea .btn{
-    width: 229px;
-    height: 40px;
+
+#btnArea .btn {
+	width: 229px;
+	height: 40px;
 }
+
 .input-form {
 	max-width: 680px;
 	margin-top: 30px;
@@ -152,4 +162,77 @@ html, body {
 
 .nav-container a {
 	color: #000 !important;
+}
+
+.orther-login .tit {
+	max-width: 260px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.orther-login .tit span {
+	position: relative;
+	display: block;
+}
+
+.orther-login .tit span strong {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 12px;
+	background: #fff;
+	font-size: 12px;
+	color: #8f9bb3;
+	position: relative;
+	z-index: 2;
+}
+
+.orther-login .tit span:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	height: 1px;
+	background: #e4e9f2;
+}
+
+.orther-login .btns {
+	text-align: center;
+	padding: 12px 0 30px;
+}
+
+.orther-login .btns a {
+	margin: 0 8px;
+}
+
+.orther-login .btns a img {
+	width: 52px;
+	display: inline;
+}
+
+.orther-login .desc {
+	text-align: center;
+	font-size: 12px;
+	line-height: 1.4;
+	color: #909090;
+	word-break: keep-all;
+}
+
+.orther-login .desc span {
+	color: #673bd4;
+}
+
+.login-social a.nv {
+	background-image: url("../images/ico_naver.png");
+	background-size: 50px 50px;
+}
+
+.login-social a.kt {
+	background-image: url("../images/ico_kakao.png");
+	background-size: 50px;
+}
+
+.login-social a.fb {
+	background-image: url("../images/btn-social-fb.png");
 }

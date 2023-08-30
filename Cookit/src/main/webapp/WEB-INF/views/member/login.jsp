@@ -31,7 +31,17 @@
             <button type="button" class="btn btn-info" style="width:100%">로그인</button>
           </div>
         </div>
-        
+        <div class="orther-login">
+			<p class="tit"><span><strong>간편로그인</strong></span></p>
+			<div class="btns">
+				<span onclick="kakaoLogin();">
+				<a href="#" class="btn-kakao"><img src="resources/images/ico_kakao.png"></a>
+				</span>
+				<span>
+				<a id="naverIdLogin_loginButton" href="javascript:void(0)" class="btn-naver"><img src="resources/images/ico_naver.png"></a>
+				</span>
+			</div>
+		</div>
       </div>
     </div>
 	<jsp:include page="../footer.jsp" />
