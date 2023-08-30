@@ -9,9 +9,29 @@
 <head>
 <meta charset="UTF-8">
 <title>쿠킷</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link href="${path }/resources/css/common.css" rel="stylesheet">
 <link href="${path }/resources/css/sub.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script>
+$(document).ready(function(){
+	setDateBox();
+});
+function setDateBox(){
+   for (var i = 2021; i > 1920; i--) {
+       $('#birth-year').append('<option value="' + i + '">' + i + ' 년</option>');
+   }
+   for (var i = 1; i < 13; i++) {
+       $('#birth-month').append('<option value="' + i + '">' + i + ' 월</option>');
+   }
+   for (var i = 1; i < 32; i++) {
+       $('#birth-day').append('<option value="' + i + '">' + i + ' 일</option>');
+   }
+}
+
+</script>
+
+
 </head>
 <body>
 <jsp:include page="../nav.jsp" />
@@ -49,6 +69,12 @@
 						<span id="checkPasswd2Result"></span>
 					</td>
 				</tr>
+				<tr>
+					<th class="td_left">전화번호</th>
+					<td class="td_right">
+						<input type="text" name="phoneNum" class="phoneNum" required="required" placeholder="ex) 010-1234-3552">
+					</td>
+				</tr>
 				<tr class="email">
 					<th class="td_left">E-Mail</th>
 					<td class="td_right">
@@ -65,13 +91,10 @@
 					<th class="td_left">생년월일</th>
 					<td class="td_right">
 						<select class="box" id="birth-year">
-					    	<option disabled selected>출생 연도</option>
 					  	</select>
 						<select class="box" id="birth-month">
-						    <option disabled selected>월</option>
 						</select>
 						<select class="box" id="birth-day">
-						    <option disabled selected>일</option>
 						</select>
 					</td>
 				</tr>
