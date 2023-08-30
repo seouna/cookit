@@ -7,15 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>쿠킷!</title>
-<link href="${path }/resources/css/bootstrap.css" rel="stylesheet">
-<link href="${path }/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="${path }/resources/css/common.css" rel="stylesheet">
 </head>
 <body>
 	<footer class="footer">
 		<div class="contents">
 			<div class="customerCenter">
 				<div>
-					<strong>고객센터</strong>
+					<h5>고객센터</h5>
 					<div>
 						<button>
 							<img src="https://storage.wcuisine.net/web-assets/images/ic-phone.svg" alt="phone" style="width: 18px; height: 18px;">
@@ -27,7 +26,7 @@
 						</button>
 					</div>
 					<div>
-						<p>운영시간</p>
+						<h5>운영시간</h5>
 						<p>
 							전화문의 - 10:00 ~ 12:00, 13:00 ~ 17:00 / 주말·공휴일 휴무<br>1:1 문의 -
 							09:00 ~ 12:00, 13:00 ~ 17:30 / 주말·공휴일 휴무

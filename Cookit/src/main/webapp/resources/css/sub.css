@@ -1,5 +1,155 @@
 @charset "UTF-8";
 
-.nav-container a{
-	color: #000!important;
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/*로그인페이지*/
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+	background: #ffffff;
+}
+.nav-container{
+	border-bottom: 1px solid #d4d4d4;
+}
+
+
+#container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 60%;
+}
+
+#loginBox {
+	width: 300px;
+	text-align: center;
+	background-color: #ffffff;
+}
+
+.input-form-box {
+	border: 0px solid #ff0000;
+	display: flex;
+	margin-bottom: 5px;
+}
+
+.input-form-box>span {
+	display: block;
+	text-align: left;
+	padding-top: 5px;
+	min-width: 65px;
+}
+
+.button-login-box {
+	margin: 10px 0;
+}
+
+#loginBoxTitle {
+	color: #000000;
+	font-weight: bold;
+	font-family: KCC-Ganpan;
+	font-size: 32px;
+	text-transform: uppercase;
+	padding: 5px;
+	margin-bottom: 20px;
+	background: linear-gradient(to right, #270a09, #8ca6ce);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#inputBox {
+	margin: 10px;
+}
+
+#inputBox button {
+	padding: 3px 5px;
+	height: 40px;
+}
+
+/*회원가입*/
+#joinForm{
+    width: 1040px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+#joinForm .btn{
+    width: 118px;
+}
+
+#joinForm h2{
+	text-align: center;
+	font-family: KCC-Ganpan;
+}
+#joinForm tr{
+    height: 60px;
+}
+
+#birth-year{
+	width: 150px;
+}
+#birth-month{
+	width: 150px;
+}
+#birth-day{
+	width: 150px;
+}
+#joinForm .td_left{
+	text-align: right;
+	padding-right: 50px;
+}
+
+#joinForm input{
+    border: 1px solid #cccccc;
+    padding: 5px;
+    
+}
+#joinForm #id{
+	width: 335px;
+}
+
+#joinForm #name, #joinForm #passwd, #joinForm #passwd2{
+	width: 458px;
+}
+#joinForm .email{
+	width: 161px;
+}
+
+#joinForm select{
+	border: 1px solid #cccccc;
+    padding: 6px 10px;
+}
+
+.joinForm {
+	width: 720px;
+    margin: 0 auto;	
+}
+#btnArea{
+	text-align: right;
+	padding-top: 20px;
+}
+#btnArea .btn{
+    width: 229px;
+    height: 40px;
+}
+.input-form {
+	max-width: 680px;
+	margin-top: 30px;
+	padding: 32px;
+	background: #fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.nav-container a {
+	color: #000 !important;
 }
