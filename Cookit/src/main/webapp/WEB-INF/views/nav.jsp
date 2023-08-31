@@ -42,7 +42,7 @@
 <!-- 	        <i class="fa-solid fa-right-to-bracket"></i> -->
 <!-- 			<i class="fa-solid fa-user"></i> -->
 <!-- 			<i class="fa-solid fa-basket-shopping nav-ico"></i> -->
-		        <li><a href="join">회원가입</a></li>
+		        <li><a href="joinForm">회원가입</a></li>
 		        <li><a href="login">로그인</a></li>
 		        <li><a href="basket">장바구니</a></li>
 	        </ul>

@@ -90,10 +90,18 @@ html, body {
 #joinForm h2 {
 	text-align: center;
 	font-family: KCC-Ganpan;
+	padding-bottom: 25px;
+}
+
+#joinForm table .td_left{
+	vertical-align: top;
+}
+#joinForm table .td_right{
+	vertical-align: top;
 }
 
 #joinForm tr {
-	height: 60px;
+	height: 70px;
 }
 
 #birth-year {
@@ -136,6 +144,11 @@ html, body {
 #joinForm select {
 	border: 1px solid #cccccc;
 	padding: 6px 10px;
+}
+
+#joinForm span{
+	font-size: 13px;
+	font-weight: bold;
 }
 
 .joinForm {

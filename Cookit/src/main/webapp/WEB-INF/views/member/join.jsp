@@ -13,21 +13,9 @@
 <link href="${path }/resources/css/common.css" rel="stylesheet">
 <link href="${path }/resources/css/sub.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="${path }/resources/js/member.js"></script>
 <script>
-$(document).ready(function(){
-	setDateBox();
-});
-function setDateBox(){
-   for (var i = 2021; i > 1920; i--) {
-       $('#birth-year').append('<option value="' + i + '">' + i + ' 년</option>');
-   }
-   for (var i = 1; i < 13; i++) {
-       $('#birth-month').append('<option value="' + i + '">' + i + ' 월</option>');
-   }
-   for (var i = 1; i < 32; i++) {
-       $('#birth-day').append('<option value="' + i + '">' + i + ' 일</option>');
-   }
-}
+
 
 </script>
 
@@ -42,10 +30,10 @@ function setDateBox(){
 				<tr>
 					<th class="td_left">ID</th>
 					<td class="td_right">
-						<input type="text" name="id" id="id" placeholder="4 ~ 8글자 사이 입력" required="required">
+						<input type="text" name="id" id="id" placeholder="4 ~ 12글자 사이 입력" required="required">
 <!-- 						<input type="button" value="중복확인" id="btnCheckId"> -->
-						<button type="button" class="btn btn-info">중복확인</button>
-						<span id="checkIdResult"></span>
+						<button type="button" class="btn btn-info btnDup">중복확인</button>
+						<br><span id="checkIdResult"></span>
 					</td>
 				</tr>
 				<tr>

@@ -16,9 +16,6 @@ import com.cook.cookit.service.MemberService;
 @Controller
 public class MainController {
 	
-
-
-	
 	@RequestMapping(value = "main", method = RequestMethod.GET)
 	public String main(Model model,HttpSession session, HttpServletRequest request) {
 		
@@ -26,11 +23,6 @@ public class MainController {
 
 	}
 	
-	@GetMapping("/join")
-	public String join() {
-		return "member/join";
-	}
-
 	@GetMapping("/login")
 	public String login() {
 		return "member/login";
