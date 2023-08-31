@@ -15,6 +15,24 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="${path }/resources/js/member.js"></script>
 <script>
+// 도메인 셀렉트박스 처리
+function selectDomain(domain) {
+	alert(domain);
+//	document.joinForm.email2.value = domain;
+// 	let domain = $("#emailDomain").val();
+	// 만약, 직접입력 항목 선택 시("" 입력 시) 입력 항목 포커스 요청 및 읽기 전용 해제
+	// 아니면, 입력 항목 읽기 전용 설정
+	if(domain == "") {
+		$(".email2").val("");
+		$(".email2").attr("readOnly",false);
+		$(".email2").css("backgroundColor","white");
+		$(".email2").focus();
+	} else {
+		$(".email2").attr("readOnly",true);
+		$(".email2").css("backgroundColor","lightgray");
+		$(".email2").val(domain);
+	}
+}
 
 
 </script>
@@ -40,33 +58,46 @@
 					<th class="td_left">이름</th>
 					<td class="td_right">
 						<input type="text" name="name" id="name" required="required">
-						<span id="checkNameResult"></span>
+						<br><span id="checkNameResult"></span>
 					</td>
 				</tr>
 				<tr>
 					<th class="td_left">비밀번호</th>
 					<td class="td_right">
-						<input type="text" name="passwd" id="passwd" placeholder="8 ~ 16글자 사이 입력" required="required">
-						<span id="checkPasswdResult"></span>
+						<input type="password" name="passwd" id="passwd" placeholder="8 ~ 16글자 사이 입력" required="required">
+						<br><span id="checkPasswdResult"></span>
 					</td>
 				</tr>
 				<tr>
 					<th class="td_left">비밀번호확인</th>
 					<td class="td_right">
 						<input type="password" name="passwd2" id="passwd2" onchange="checkConfirmPasswd(this.value)" required="required">
-						<span id="checkPasswd2Result"></span>
+						<br><span id="checkPasswd2Result"></span>
 					</td>
 				</tr>
 				<tr>
 					<th class="td_left">전화번호</th>
 					<td class="td_right">
-						<input type="text" name="phoneNum" class="phoneNum" required="required" placeholder="ex) 010-1234-3552">
+						<input type="text" name="member_tel" class="member_tel" maxlength="11" equired="required" placeholder="ex) 01012343552">
+						<button type="button" class="btn btn-info btnSend">본인인증</button>
+						<br><span id="phoneCheck"></span>
 					</td>
 				</tr>
+				<tr id="auth-cont">
+					<th class="td_left">인증번호</th>
+					<td class="td_right">
+						<input type="text" name="member_tel2" class="member_tel2" maxlength="4" equired="required" placeholder="인증번호를 입력해주세요.">
+						<button type="button" class="btn btn-info btnAuth">인증완료</button>
+						<br><span id="phoneCheck2"></span>
+						<input type="hidden" id="phoneDoubleChk"/>
+					</td>
+				</tr>
+				
+			
 				<tr class="email">
 					<th class="td_left">E-Mail</th>
 					<td class="td_right">
-						<input type="text" name="email1" class="email" required="required">@<input type="text" name="email2" class="email" required="required">
+						<input type="text" name="email1" class="email" required="required">@<input type="text" name="email2" class="email2" required="required">
 						<select id="emailDomain" onchange="selectDomain(this.value)">
 							<option value="">직접입력</option>
 							<option value="naver.com">naver.com</option>

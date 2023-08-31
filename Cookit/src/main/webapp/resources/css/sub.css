@@ -85,6 +85,7 @@ html, body {
 
 #joinForm .btn {
 	width: 118px;
+	vertical-align: top;
 }
 
 #joinForm h2 {
@@ -119,6 +120,7 @@ html, body {
 #joinForm .td_left {
 	text-align: right;
 	padding-right: 50px;
+    height: 70px;
 }
 
 #joinForm input {
@@ -137,13 +139,23 @@ html, body {
 #joinForm .email {
 	width: 161px;
 }
+#joinForm .email2 {
+	width: 161px;
+}
 
-#joinForm .phoneNum{
-	width: 458px;
+#joinForm .member_tel{
+	width: 335px;
+}
+#joinForm .member_tel2{
+	width: 335px;
 }
 #joinForm select {
 	border: 1px solid #cccccc;
 	padding: 6px 10px;
+}
+
+#joinForm #auth-cont{
+	display: none;
 }
 
 #joinForm span{
@@ -151,6 +163,18 @@ html, body {
 	font-weight: bold;
 }
 
+#joinForm .authSuccess{
+	font-size: 15px;
+    color: white;
+    padding: 7px 28px;
+    border: 1px solid #545b62;
+    background-color: #545b62;
+    border-radius: 4px;
+}
+
+#auth-cont{
+	height: 80px;
+}
 .joinForm {
 	width: 720px;
 	margin: 0 auto;
