@@ -41,6 +41,9 @@ public class MemberService {
 		
 		
 	}
+	public int registMember(HashMap<String, String> member) {
+		return mapper.insertMember(member);
+	}
 
 	
 }

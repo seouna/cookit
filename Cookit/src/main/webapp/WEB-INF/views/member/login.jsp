@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>쿠킷</title>
 <link href="${path }/resources/css/common.css" rel="stylesheet">
-<link href="${path }/resources/css/sub.css" rel="stylesheet">
+<link href="${path }/resources/css/member.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="../nav.jsp" />

@@ -9,10 +9,11 @@
 <head>
 <meta charset="UTF-8">
 <title>쿠킷</title>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link href="${path }/resources/css/common.css" rel="stylesheet">
-<link href="${path }/resources/css/sub.css" rel="stylesheet">
+<link href="${path }/resources/css/member.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="${path }/resources/js/member.js"></script>
 <script>
 // 도메인 셀렉트박스 처리
@@ -43,12 +44,12 @@ function selectDomain(domain) {
 <jsp:include page="../nav.jsp" />
 <article id="joinForm">
 		<h2>회원 가입</h2>
-		<form action="MemberJoinPro.me" method="post" class="joinForm">
+		<form action="joinPro" method="post" class="joinForm">
 			<table>
 				<tr>
 					<th class="td_left">ID</th>
 					<td class="td_right">
-						<input type="text" name="id" id="id" placeholder="4 ~ 12글자 사이 입력" required="required">
+						<input type="text" name="member_id" id="id" placeholder="4 ~ 12글자 사이 입력" required="required">
 <!-- 						<input type="button" value="중복확인" id="btnCheckId"> -->
 						<button type="button" class="btn btn-info btnDup">중복확인</button>
 						<br><span id="checkIdResult"></span>
@@ -57,14 +58,14 @@ function selectDomain(domain) {
 				<tr>
 					<th class="td_left">이름</th>
 					<td class="td_right">
-						<input type="text" name="name" id="name" required="required">
+						<input type="text" name="member_name" id="name" required="required">
 						<br><span id="checkNameResult"></span>
 					</td>
 				</tr>
 				<tr>
 					<th class="td_left">비밀번호</th>
 					<td class="td_right">
-						<input type="password" name="passwd" id="passwd" placeholder="8 ~ 16글자 사이 입력" required="required">
+						<input type="password" name="member_passwd" id="passwd" placeholder="8 ~ 16글자 사이 입력" required="required">
 						<br><span id="checkPasswdResult"></span>
 					</td>
 				</tr>
@@ -73,6 +74,21 @@ function selectDomain(domain) {
 					<td class="td_right">
 						<input type="password" name="passwd2" id="passwd2" onchange="checkConfirmPasswd(this.value)" required="required">
 						<br><span id="checkPasswd2Result"></span>
+					</td>
+				</tr>
+				<tr class="address">
+					<th class="td_left">주소</th>
+					<td class="td_right">
+						<input type="text" id="member_address" name="member_address" class="input" placeholder="주소입력" readonly="readonly">
+                        <button type="button" class="btn btn-info btnAddress">주소검색</button>
+                        <br><span class="joinCheck"></span>
+					</td>
+				</tr>
+				<tr class="address-detail">
+					<th class="td_left">상세주소</th>
+					<td class="td_right">
+						<input type="text" id="member_address_detail" name="member_address_detail" class="input" value="" placeholder="상세주소입력">
+						<br><span class="joinCheck"></span>
 					</td>
 				</tr>
 				<tr>
@@ -97,7 +113,7 @@ function selectDomain(domain) {
 				<tr class="email">
 					<th class="td_left">E-Mail</th>
 					<td class="td_right">
-						<input type="text" name="email1" class="email" required="required">@<input type="text" name="email2" class="email2" required="required">
+						<input type="text" name="member_email1" class="email" required="required">@<input type="text" name="email2" class="email2" required="required">
 						<select id="emailDomain" onchange="selectDomain(this.value)">
 							<option value="">직접입력</option>
 							<option value="naver.com">naver.com</option>
@@ -109,19 +125,19 @@ function selectDomain(domain) {
 				<tr class="bday">
 					<th class="td_left">생년월일</th>
 					<td class="td_right">
-						<select class="box" id="birth-year">
+						<select class="box" id="birth-year" name="member_birth_year">
 					  	</select>
-						<select class="box" id="birth-month">
+						<select class="box" id="birth-month" name="member_birth_month">
 						</select>
-						<select class="box" id="birth-day">
+						<select class="box" id="birth-day" name="member_birth_day">
 						</select>
 					</td>
 				</tr>
 				
 				<tr>
 					<td colspan="2" id="btnArea">
-						<button type="button" class="btn btn-info">가입하기</button>
-						<button type="button" class="btn btn-secondary">가입취소</button>
+						<button type="submit" class="btn btn-info btn-join">가입하기</button>
+						<button type="button" class="btn btn-secondary btn-back">가입취소</button>
 					</td>
 				</tr>
 			</table>

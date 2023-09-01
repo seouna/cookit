@@ -6,4 +6,6 @@ public interface MemberMapper {
 
 	HashMap<String, String> checkDupId(String id);
 
+	int insertMember(HashMap<String, String> member);
+
 }

@@ -1,9 +1,68 @@
+
+// 다음 주소 API
+window.onload = function(){
+	
+    $(".btnAddress").on("click",function(){
+		alert("ddd");  
+        new daum.Postcode({
+            oncomplete: function(data) { 
+                document.getElementById("member_address").value = data.address; // 주소 넣기
+                document.querySelector("#member_address_detail").focus(); //상세입력 포커싱
+            }
+        }).open();
+    });
+}
+
+
+
 $(document).ready(function() {
 
 	let idStatus = false;
 	let passwdStatus = false;
 	let passwd2Status = false;
 	let nameStatus = false;
+	let phoneMaxLength = 13;
+	
+	$("form").submit(function() {
+		
+		 if(!idStatus) {
+			alert("아이디를 확인하세요");
+			$("#member_id").focus();
+			return false;
+		}else if(!nameStatus) {
+			alert("이름을 확인하세요");
+			$("#member_name").focus();
+			return false;
+		} else if(!passwdStatus) {
+			alert("비밀번호를 확인하세요");
+			$("#memeber_pw").focus();
+			return false;
+		} else if(!passwd2Status) {
+			alert("비밀번호확인을 확인하세요");
+			$("#member_pw2").focus();
+			return false;
+		} else if($("#member_address1").val() == "") {
+			alert("주소를 입력하세요");
+			$("#member_address1").focus();
+			return false;
+		} else if($("#member_address2").val() == "") {
+			alert("상세주소를 입력하세요");
+			$("#member_address2").focus();
+			return false;
+		} else if($("#member_bday").val().length != babyMaxLength) {
+			alert("생일을 확인해주세요");
+			$("#member_bday").focus();
+			return false;
+		} else if($("#member_tel").val().length != phoneMaxLength) {
+			alert("휴대폰 번호를 확인해주세요");
+			$("#member_tel").focus();
+			return false;
+		}
+		return true;
+	});
+	
+
+
 
 	//생일
 	for (var i = 2021; i > 1920; i--) {
@@ -183,7 +242,7 @@ $(document).ready(function() {
 			$("#phoneCheck2").remove();
 			$(".member_tel2").css("margin-right", "5px");
 			$("#phoneDoubleChk").val("true");
-			$(".member_tel").attr("disabled", true);
+//			$(".member_tel").attr("disabled", true);
 			$(".member_tel2").attr("disabled", true);
 		} else {
 			$("#phoneCheck2").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");

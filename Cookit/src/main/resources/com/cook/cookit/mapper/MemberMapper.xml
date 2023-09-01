@@ -7,6 +7,22 @@
 		 FROM member
 			WHERE member_id = #{member_id} 
 	</select>
+	
+	<insert id="insertMember">
+		INSERT INTO member
+			VALUES(
+				   #{member_id}
+				   , #{member_name}
+				   , #{member_passwd}
+				   , #{member_address}
+				   , #{member_address_detail}
+				   , #{member_bday}
+				   , #{member_email}
+				   , #{member_tel}
+				   , '0' -- member_point
+				   , 'N' -- member_delete_status
+			)
+	</insert>
 
 </mapper>
 
