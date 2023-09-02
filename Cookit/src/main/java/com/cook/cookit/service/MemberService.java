@@ -44,6 +44,9 @@ public class MemberService {
 	public int registMember(HashMap<String, String> member) {
 		return mapper.insertMember(member);
 	}
+	public HashMap<String, String> getMember(String member_id) {
+		return mapper.selectMem_id(member_id);
+	}
 
 	
 }

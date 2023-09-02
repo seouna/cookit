@@ -11,6 +11,11 @@
 <title>쿠킷</title>
 <link href="${path }/resources/css/common.css" rel="stylesheet">
 <link href="${path }/resources/css/member.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="${path }/resources/js/member.js"></script>
+<script type="text/javascript">
+
+</script>
 </head>
 <body>
 <jsp:include page="../nav.jsp" />
@@ -24,13 +29,15 @@
         <!-- 로그인 페이지 타이틀 -->
         <div id="loginBoxTitle">C O O K I T<br>LOGIN</div>
         <!-- 아이디, 비번, 버튼 박스 -->
-        <div id="inputBox">
-          <div class="input-form-box"><span>아이디 </span><input type="text" name="uid" class="form-control"></div>
-          <div class="input-form-box"><span>비밀번호 </span><input type="password" name="upw" class="form-control"></div>
-          <div class="button-login-box" >
-            <button type="button" class="btn btn-info" style="width:100%">로그인</button>
-          </div>
-        </div>
+        <form id="loginForm"  action ="loginPro" method="post">
+	        <div id="inputBox">
+	          <div class="input-form-box"><span>아이디 </span><input type="text" name="member_id" class="form-control" required="required"></div>
+	          <div class="input-form-box"><span>비밀번호 </span><input type="password" name="member_pw" class="form-control" required="required"></div>
+	          <div class="button-login-box" >
+	            <button type="submit" class="btn btn-info btn_login" style="width:100%">로그인</button>
+	          </div>
+	        </div>
+        </form>
         <div class="orther-login">
 			<p class="tit"><span><strong>간편로그인</strong></span></p>
 			<div class="btns">

@@ -23,6 +23,12 @@
 				   , 'N' -- member_delete_status
 			)
 	</insert>
+	
+	<select id="selectMem_id" resultType="hashmap">
+		SELECT *
+		 FROM member
+		 WHERE member_id = #{member_id} 
+	</select>
 
 </mapper>
 

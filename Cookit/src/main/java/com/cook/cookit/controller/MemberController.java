@@ -75,5 +75,30 @@ public class MemberController {
 		
 		return "fail_back";
 	}
+	
+	@PostMapping("loginPro")
+	public String loginPro(@RequestParam String member_id, @RequestParam String member_pw
+							, Model model, HttpSession session) {
+		System.out.println(member_id);
+		HashMap<String, String> member = memberService.getMember(member_id);
+		
+		  if (member != null) {
+		        String hashedPassword = member.get("member_pw");
+			    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+			    if (passwordEncoder.matches(member_pw, hashedPassword)) {
+			    	if(member.get("member_delete_status").equals("Y")) {
+			    		model.addAttribute("msg", "탈퇴한 회원입니다.");
+			    		return "fail_back";
+			    	}
+			        session.setAttribute("sId", member.get("member_id"));
+					
+			        return "redirect:/main";
+			    }
+		    
+		    }
+		    model.addAttribute("msg", "아이디와 비밀번호가 일치하지 않습니다.");
+		    return "fail_back";
+	}
 
 }

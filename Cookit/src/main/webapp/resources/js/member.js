@@ -3,7 +3,6 @@
 window.onload = function(){
 	
     $(".btnAddress").on("click",function(){
-		alert("ddd");  
         new daum.Postcode({
             oncomplete: function(data) { 
                 document.getElementById("member_address").value = data.address; // 주소 넣기
@@ -15,15 +14,20 @@ window.onload = function(){
 
 
 
+
 $(document).ready(function() {
 
+	$(".joinform").submit(function() {	
+		$(".btn_login").on("click", function() {
+		})
+	});
 	let idStatus = false;
 	let passwdStatus = false;
 	let passwd2Status = false;
 	let nameStatus = false;
 	let phoneMaxLength = 13;
 	
-	$("form").submit(function() {
+	$(".joinform").submit(function() {
 		
 		 if(!idStatus) {
 			alert("아이디를 확인하세요");
@@ -197,7 +201,6 @@ $(document).ready(function() {
 	// 폰번호 변환
 	////01067675757 => 010-6767-5757
 	$(".member_tel").on("change", function() {
-		let phoneNum = $(".phoneNum").val();
 		var inputValue = $(this).val();
 		var formattedValue = inputValue.replace(/\D/g, '').slice(0, 11);
 		var formattedNumber = formattedValue.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
@@ -251,6 +254,5 @@ $(document).ready(function() {
 			$(this).attr("autofocus", true);
 		}
 	});
-
 
 });

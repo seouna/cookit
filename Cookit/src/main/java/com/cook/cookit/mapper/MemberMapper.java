@@ -8,4 +8,6 @@ public interface MemberMapper {
 
 	int insertMember(HashMap<String, String> member);
 
+	HashMap<String, String> selectMem_id(String member_id);
+
 }
