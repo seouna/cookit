@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cook.cookit.mapper.MarketMapper">
+
+	<!-- 마켓상품조회 -->
+	<select id="selectProduct" resultType="HashMap">
+		SELECT *
+			FROM product
+	</select>
+
+	<!-- 마켓상품등록 -->
+	<insert id="insertProduct"> 
+		INSERT
+			INTO product
+			VALUES (
+				'code',
+				#{product_name}, 
+				#{product_category},
+				'file',
+				#{product_price}
+			)
+	</insert>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

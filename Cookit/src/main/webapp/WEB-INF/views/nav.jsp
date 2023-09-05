@@ -30,7 +30,7 @@
 		          <a class="nav-link" href="#">영상</a>
 		        </li>
 		         <li class="nav-item">
-		          <a class="nav-link" href="#">마켓</a>
+		          <a class="nav-link" href="market">마켓</a>
 		        </li>
 		      </ul>
 <!-- 		      <form class="d-flex" role="search"> -->

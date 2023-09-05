@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'KCC-Ganpan';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*마켓 상품등록 페이지*/
+html, body {
+	height: 100%;
+	background: #ffffff;
+}
+
+.nav-container {
+	border-bottom: 1px solid #d4d4d4;
+}
+
+/* .marketForm { */
+/* 	width: 720px; */
+/* 	margin: 0 auto; */
+/* } */
+
+#container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 70%;
+}
+
+#marketRegisterForm .btn {
+	width: 118px;
+	vertical-align: top;
+}
+
+#marketRegisterForm h2 {
+	text-align: center;
+	font-family: KCC-Ganpan;
+	padding-bottom: 25px;
+}
+
+#marketRegisterForm table .td_left{
+	vertical-align: top;
+}
+#marketRegisterForm table .td_right{
+	vertical-align: top;
+}
+
+#marketRegisterForm tr {
+	height: 70px;
+}
+
+#marketRegisterForm .td_left {
+	text-align: right;
+	padding-right: 50px;
+    height: 70px;
+}
+
+#marketRegisterForm input {
+	border: 1px solid #cccccc;
+	padding: 5px;
+}
+
+#marketRegisterForm #product_name, #product_category, #product_image, #product_price {
+	width: 335px;
+}
+
+#btnArea {
+	text-align: right;
+	padding-top: 20px;
+}
+
+#btnArea .btn {
+	width: 229px;
+	height: 40px;
+}
