@@ -7,8 +7,9 @@ recipe api 받아와서 음식 레시피들을 불러온뒤 <br>
 </p>
 
 
-<h2>회원가입</h2>
-![image](https://github.com/seouna/cookit/assets/117568974/b03b137e-1519-4b58-b821-1fc7be486a51)
+<h2> 📑 회원가입</h2>
+![image](https://github.com/seouna/cookit/assets/117568974/303d86bd-fbe5-411c-8f09-8e9a41a649a4)
+
 
 <p>
   -- 정규표현식 <br>
