@@ -8,9 +8,7 @@ recipe api 받아와서 음식 레시피들을 불러온뒤 <br>
 
 
 <h2> 📑 회원가입</h2>
-![image](https://github.com/seouna/cookit/assets/117568974/303d86bd-fbe5-411c-8f09-8e9a41a649a4)
-
-
+![image](https://github.com/seouna/cookit/assets/117568974/7a62445b-e4aa-4fcd-a779-bdc2a3c27eda)
 <p>
   -- 정규표현식 <br>
   -- daum 주소 api <br>
