@@ -30,6 +30,11 @@
 		 WHERE member_id = #{member_id} 
 	</select>
 
+	<!-- 카카오 회원 확인 -->
+	<select id="selectKakao" resultType="hashmap">
+		SELECT * FROM member
+			WHERE member_email = #{email}
+	</select>
 </mapper>
 
 

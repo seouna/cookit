@@ -13,7 +13,41 @@
 <link href="${path }/resources/css/member.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="${path }/resources/js/member.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript">
+//카카오 로그인
+Kakao.init('f373b556906a6599b1025ca0712b4051'); 
+Kakao.isInitialized(); 
+function kakaoLogin() {
+    Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function (response) {
+		       	console.log(response)
+		       	var accessToken = Kakao.Auth.getAccessToken();
+		       	Kakao.Auth.setAccessToken(accessToken);
+		       	var account = response.kakao_account;
+					
+				$('#form-kakao-login input[name=email]').val(account.email);
+				$('#form-kakao-login input[name=name]').val(account.profile.nickname);
+				$('#form-kakao-login input[name=gender]').val(account.gender);
+				$('#form-kakao-login input[name=accessToken]').val(accessToken);
+				// 사용자 정보가 포함된 폼을 서버로 제출.
+				document.querySelector('#form-kakao-login').submit();
+        	  
+        	  
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
 
 </script>
 </head>
@@ -51,6 +85,12 @@
 		</div>
       </div>
     </div>
+    <form id="form-kakao-login" method="post" action="kakaoLogin">
+		<input type="hidden" name="email"/>
+		<input type="hidden" name="name"/>
+		<input type="hidden" name="gender"/>
+		<input type="hidden" name="accessToken"/>
+	</form>	
 	<jsp:include page="../footer.jsp" />
 </body>
 </html>

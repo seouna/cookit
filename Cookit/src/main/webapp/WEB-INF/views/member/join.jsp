@@ -113,7 +113,13 @@ function selectDomain(domain) {
 				<tr class="email">
 					<th class="td_left">E-Mail</th>
 					<td class="td_right">
-						<input type="text" name="member_email1" class="email" required="required">@<input type="text" name="email2" class="email2" required="required">
+						<c:if test="${empty param.email}">
+							<input type="text" name="member_email1" class="email" required="required" >@<input type="text" name="email2" class="email2" required="required">
+						</c:if>
+						<c:if test="${not empty param.email}">
+							<input type="text" name="member_email1" class="email" readonly="readonly" value=${param.email.split('@')[0] }>@
+							<input type="text" name="member_email2" class="email2" readonly="readonly" value=${param.email.split('@')[1] }>
+						</c:if>
 						<select id="emailDomain" onchange="selectDomain(this.value)">
 							<option value="">직접입력</option>
 							<option value="naver.com">naver.com</option>

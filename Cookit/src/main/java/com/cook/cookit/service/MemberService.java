@@ -47,6 +47,9 @@ public class MemberService {
 	public HashMap<String, String> getMember(String member_id) {
 		return mapper.selectMem_id(member_id);
 	}
+	public HashMap<String, String> kakaoMember(String email) {
+		return mapper.selectKakao(email);
+	}
 
 	
 }

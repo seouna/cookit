@@ -11,6 +11,19 @@
 <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/81736b67fc.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+function logout() {
+	// 카카오 로그인 아닐시 session "token" = true
+	let logout = confirm("로그아웃 하시겠습니까?");
+	if(logout){
+		location.href = "logout";
+	}
+	
+	if(${sessionScope.token != true}){
+		location.href="https://kauth.kakao.com/oauth/logout?client_id=1235075891ee575b4fb830f64b9a5bfd&logout_redirect_uri=http://localhost:8080/cookit/logout";
+	}
+}
+</script>
 </head>
 <body>
 <div class="nav-container">
@@ -42,9 +55,21 @@
 <!-- 	        <i class="fa-solid fa-right-to-bracket"></i> -->
 <!-- 			<i class="fa-solid fa-user"></i> -->
 <!-- 			<i class="fa-solid fa-basket-shopping nav-ico"></i> -->
-		        <li><a href="joinForm">회원가입</a></li>
-		        <li><a href="login">로그인</a></li>
-		        <li><a href="basket">장바구니</a></li>
+
+				<c:choose>
+					<c:when test="${empty sessionScope.sId }">
+				        <li><a href="joinForm">회원가입</a></li>
+				        <li><a href="login">로그인</a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="myPage">${sessionScope.sId }마이페이지</a></li>
+						<li><a href="javascript:logout()" data-reload="reload" class="">로그아웃</a></li>
+				        <li><a href="basket">장바구니</a></li>
+				        <c:if test="${sessionScope.sId eq 'admin' }">
+							<li><a href="admin" class="">관리자</a></li>
+						</c:if>
+					</c:otherwise>
+				</c:choose>
 	        </ul>
 		  </div>
 		</nav>		

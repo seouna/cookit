@@ -10,4 +10,6 @@ public interface MemberMapper {
 
 	HashMap<String, String> selectMem_id(String member_id);
 
+	HashMap<String, String> selectKakao(String email);
+
 }
