@@ -50,9 +50,9 @@
 			</ul>
 			
 			<div class="row row-cols-1 row-cols-md-4 g-4">
-			<!--  반복 -->
-				<div class="col">
-					<c:forEach items="${productList }" var="productList">
+				<!--  반복 -->
+				<c:forEach items="${productList }" var="productList">
+					<div class="col">
 						<div class="card">
 							<img src="${path }/resources/images/food1.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
@@ -61,9 +61,9 @@
 								<button type="button" class="btn btn-info btn-join">구매하기</button>
 							</div>
 						</div>
-					</c:forEach>
-				</div>
-				
+					</div>
+				</c:forEach>
+				<!--  -->
 			</div>		
 		</div>
 	</div>

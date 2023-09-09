@@ -13,6 +13,7 @@
 <link href="${path }/resources/css/market.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="${path }/resources/js/market.js"></script>
 </head>
 <jsp:include page="../nav.jsp" />
 <body>
@@ -20,8 +21,8 @@
 <div id="container">
 	<div class="main-content">
 		<!-- 상품등록 페이지 타이틀 -->
-        <form action="marketRegisterPro" method="post" id="marketRegisterForm">
-        <h2>상품등록</h2>
+        <form action="marketRegisterPro" method="post" name="product" id="marketRegisterForm" enctype="multipart/form-data">
+        	<h2>상품등록</h2>
         	<table>
         		<tr>
         			<th class="td_left">재료명</th>
@@ -47,7 +48,12 @@
         		<tr>
         			<th class="td_left">재료사진</th>
         			<td class="td_right">
-        				<input type="file" id="product_image" name="product_image">
+						<div class="upload">
+<!--         				<input type="file" id="product_image" name="product_image" accept="image/jpg, image/jpeg, image/png"> -->
+<!--         				<input type="file" class="imageUpload" id="product_image" name="product_image" accept="image/*" required multiple> -->
+<!-- 						<input type="file" class="real-upload" name="product_image" accept="image/*" required multiple> -->
+						<input type="file" name="file" accept="image/*" required multiple>
+						<ul class="image-preview"></ul></div>
         			</td>
         		</tr>
         		<tr>

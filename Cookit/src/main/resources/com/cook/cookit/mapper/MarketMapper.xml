@@ -20,6 +20,23 @@
 				#{product_price}
 			)
 	</insert>
+	
+	<!-- 마켓상품 파일업로드 -->
+	<insert id="insertFile">
+	<selectKey keyProperty="file_idx" resultType="int" order="BEFORE">
+			SELECT IFNULL(MAX(file_idx), 0) FROM file
+	</selectKey>
+		INSERT
+			INTO file
+			VALUES (
+				#{file_idx} + 1,
+				#{file_div},
+				#{file_exe},
+				#{file_size},
+				#{file_name},
+				#{file_path}
+			)
+	</insert>
 
 </mapper>
 

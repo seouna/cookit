@@ -8,7 +8,6 @@ import lombok.Data;
 public class FileVO {
 	private int file_idx;
 	private String file_div;
-	private int file_num;
 	private String file_exe;
 	private String file_size;
 	private String file_name;
