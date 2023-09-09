@@ -14,6 +14,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="${path }/resources/js/member.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+
 <script type="text/javascript">
 //카카오 로그인
 Kakao.init('f373b556906a6599b1025ca0712b4051'); 
@@ -48,6 +50,19 @@ function kakaoLogin() {
       },
     })
   }
+  
+// 네이버 로그인을 위한 팝업창 생성
+function showLoginPopup(){
+    let uri = 'https://nid.naver.com/oauth2.0/authorize?' +
+        'response_type=code' +                  // 인증과정에 대한 내부 구분값 code 로 전공 (고정값)
+        '&client_id=blgJUSFIodH1QSzRZ4cw' +     // 발급받은 client_id 를 입력
+        '&state=NAVER_LOGIN_TEST' +             // CORS 를 방지하기 위한 특정 토큰값(임의값 사용)
+        '&redirect_uri=http://localhost:8080/cookit/success';   // 어플케이션에서 등록했던 CallBack URL를 입력
+
+    // 사용자가 사용하기 편하게끔 팝업창으로 띄어준다.
+    window.open(uri, "Naver Login Test PopupScreen", "width=450, height=600");
+}
+  
 
 </script>
 </head>
@@ -78,8 +93,8 @@ function kakaoLogin() {
 				<span onclick="kakaoLogin();">
 				<a href="#" class="btn-kakao"><img src="resources/images/ico_kakao.png"></a>
 				</span>
-				<span>
-				<a id="naverIdLogin_loginButton" href="javascript:void(0)" class="btn-naver"><img src="resources/images/ico_naver.png"></a>
+				<span onclick="showLoginPopup();">
+				<a id="naverIdLogin_loginButton" class="btn-naver"><img src="resources/images/ico_naver.png"></a>
 				</span>
 			</div>
 		</div>
@@ -92,5 +107,6 @@ function kakaoLogin() {
 		<input type="hidden" name="accessToken"/>
 	</form>	
 	<jsp:include page="../footer.jsp" />
+
 </body>
 </html>

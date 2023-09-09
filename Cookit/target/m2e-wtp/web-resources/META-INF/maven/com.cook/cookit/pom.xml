@@ -158,6 +158,13 @@
 		</dependency>
 		
 		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webflux -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webflux</artifactId>
+		    <version>5.3.23</version>
+		</dependency>
+		
 
 		<!-- Logging -->
 		<dependency>
@@ -282,4 +289,3 @@
 		</plugins>
 	</build>
 </project>
-
