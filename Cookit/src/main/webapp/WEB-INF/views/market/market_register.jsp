@@ -13,7 +13,7 @@
 <link href="${path }/resources/css/market.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="${path }/resources/js/market.js"></script>
+<%-- <script src="${path }/resources/js/market.js"></script> --%>
 </head>
 <jsp:include page="../nav.jsp" />
 <body>
@@ -48,12 +48,9 @@
         		<tr>
         			<th class="td_left">재료사진</th>
         			<td class="td_right">
-						<div class="upload">
-<!--         				<input type="file" id="product_image" name="product_image" accept="image/jpg, image/jpeg, image/png"> -->
-<!--         				<input type="file" class="imageUpload" id="product_image" name="product_image" accept="image/*" required multiple> -->
-<!-- 						<input type="file" class="real-upload" name="product_image" accept="image/*" required multiple> -->
-						<input type="file" name="file" accept="image/*" required multiple>
-						<ul class="image-preview"></ul></div>
+						<input type="file" name="file" class="fileUpload" accept="image/*" required multiple style="display: none;">
+						<div class="uploadArea">이미지를 등록해주세요.</div>
+						<ul class="imagePreview" style="display: none;"></ul>
         			</td>
         		</tr>
         		<tr>
@@ -72,7 +69,46 @@
         </form>
 	</div>
 </div>	
+<script>
+	const fileUpload = document.querySelector('.fileUpload');
+	const upload = document.querySelector('.uploadArea');
+	// 이미지 업로드 미리보기
+    function getImageFiles(e) {
+    	const uploadFiles = [];
+		const files = e.currentTarget.files;
+        console.log(typeof files, files);
+    	const imagePreview = document.querySelector('.imagePreview');
+    	const docFrag = new DocumentFragment();
+    	
+    	[...files].forEach(file => {
+    	uploadFiles.push(file);
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const preview = createElement(e, file);
+          imagePreview.appendChild(preview);
+        };
+        reader.readAsDataURL(file);
+    	});
+    	
+//     	upload.style.display = 'none';
+    	imagePreview.style.display = 'flex';
+	}
 
+    function createElement(e, file) {
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        img.setAttribute('src', e.target.result);
+        img.setAttribute('data-file', file.name);
+        li.appendChild(img);
+        return li;
+	}
+    
+ 	// input태그 숨기고 대신 클릭할 부분
+    upload.addEventListener('click', () => fileUpload.click());
+ 	// 이미지 업로드 시 미리보기 이벤트 실행
+    fileUpload.addEventListener('change', getImageFiles);
+    
+</script>
 </body>
 <jsp:include page="../footer.jsp" />
 </html>

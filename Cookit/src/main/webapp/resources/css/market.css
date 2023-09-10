@@ -29,7 +29,7 @@ html, body {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	height: 70%;
+/* 	height: 70%; */
 }
 
 #marketRegisterForm .btn {
@@ -80,29 +80,35 @@ html, body {
 }
 
 /*이미지 영역*/
-/* li { */
-/*   list-style: none; */
-/* } */
+* {
+padding: 0;
+margin: 0;
+}
+
+li {
+  list-style: none;
+}
 
 img {
   width: 200px;
   height: 200px;
 }
 
-.real-upload {
+.fileUpload {
   display: none;
 }
 
-.upload {
+.uploadArea {
   width: 200px;
-  height: 200px;
-  background-color: antiquewhite;
+  height: 28px;
+  border: 1px solid #cccccc;
 }
 
-.image-preview {
-  width: 1300px;
-  height: 200px;
-  background-color: aquamarine;
+.imagePreview {
+  width: 620px;
+/*   height: 420px; */
+  border: 1px solid #cccccc;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 5px;
 }
