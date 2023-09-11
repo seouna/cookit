@@ -234,6 +234,11 @@ html, body {
 .orther-login .btns {
 	text-align: center;
 	padding: 12px 0 30px;
+	display: inline-block;
+}
+
+.orther-login div {
+	display: inline-block;
 }
 
 .orther-login .btns a {
@@ -241,8 +246,10 @@ html, body {
 }
 
 .orther-login .btns a img {
+	border-radius: 30px;
 	width: 52px;
-	display: inline;
+/* 	display: inline; */
+	float: right;
 }
 
 .orther-login .desc {

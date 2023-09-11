@@ -51,17 +51,17 @@ function kakaoLogin() {
     })
   }
   
-// 네이버 로그인을 위한 팝업창 생성
-function showLoginPopup(){
-    let uri = 'https://nid.naver.com/oauth2.0/authorize?' +
-        'response_type=code' +                  // 인증과정에 대한 내부 구분값 code 로 전공 (고정값)
-        '&client_id=blgJUSFIodH1QSzRZ4cw' +     // 발급받은 client_id 를 입력
-        '&state=NAVER_LOGIN_TEST' +             // CORS 를 방지하기 위한 특정 토큰값(임의값 사용)
-        '&redirect_uri=http://localhost:8080/cookit/success';   // 어플케이션에서 등록했던 CallBack URL를 입력
+// // 네이버 로그인을 위한 팝업창 생성
+// function showLoginPopup(){
+//     let uri = 'https://nid.naver.com/oauth2.0/authorize?' +
+//         'response_type=code' +                  // 인증과정에 대한 내부 구분값 code 로 전공 (고정값)
+//         '&client_id=blgJUSFIodH1QSzRZ4cw' +     // 발급받은 client_id 를 입력
+//         '&state=NAVER_LOGIN_TEST' +             // CORS 를 방지하기 위한 특정 토큰값(임의값 사용)
+//         '&redirect_uri=http://localhost:8080/cookit/joinForm';   // 어플케이션에서 등록했던 CallBack URL를 입력
 
-    // 사용자가 사용하기 편하게끔 팝업창으로 띄어준다.
-    window.open(uri, "Naver Login Test PopupScreen", "width=450, height=600");
-}
+//     // 사용자가 사용하기 편하게끔 팝업창으로 띄어준다.
+//     window.open(uri, "Naver Login Test PopupScreen", "width=450, height=600");
+// }
   
 
 </script>
@@ -90,12 +90,37 @@ function showLoginPopup(){
         <div class="orther-login">
 			<p class="tit"><span><strong>간편로그인</strong></span></p>
 			<div class="btns">
-				<span onclick="kakaoLogin();">
-				<a href="#" class="btn-kakao"><img src="resources/images/ico_kakao.png"></a>
-				</span>
-				<span onclick="showLoginPopup();">
-				<a id="naverIdLogin_loginButton" class="btn-naver"><img src="resources/images/ico_naver.png"></a>
-				</span>
+				<div onclick="kakaoLogin();">
+					<a href="#" class="btn-kakao"><img src="resources/images/ico_kakao.png"></a>
+				</div>
+				<div id="naver_id_login">
+					<a id="naverIdLogin_loginButton" class="btn-naver" ></a>
+				</div>
+				<script type="text/javascript">
+					var naver_id_login = new naver_id_login("blgJUSFIodH1QSzRZ4cw", "http://localhost:8080/cookit/naverLogin");
+					var state = naver_id_login.getUniqState();
+					naver_id_login.setState(state);
+					naver_id_login.setButton("green", 1,52);
+					naver_id_login.setPopup();
+					naver_id_login.init_naver_id_login();
+				</script>
+				
+				<!-- 네이버아디디로로그인 Callback페이지 처리 Script -->
+				<script type="text/javascript">
+					// 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+					function naverSignInCallback() {
+						// naver_id_login.getProfileData('프로필항목명');
+						// 프로필 항목은 개발가이드를 참고하시기 바랍니다.
+						alert(naver_id_login.getProfileData('email'));
+						alert(naver_id_login.getProfileData('nickname'));
+						alert(naver_id_login.getProfileData('age'));
+					}
+				
+				
+					// 네이버 사용자 프로필 조회
+					naver_id_login.get_naver_userprofile("naverSignInCallback()");
+				</script>
+<!-- //네이버아디디로로그인 Callback페이지 처리 Script -->
 			</div>
 		</div>
       </div>

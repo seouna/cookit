@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cook.cookit.mapper.MemberMapper;
+import com.cook.cookit.vo.MemberVO;
 
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
@@ -59,8 +60,14 @@ public class MemberService {
 	public HashMap<String, String> kakaoMember(String email) {
 		return mapper.selectKakao(email);
 	}
+	public Object getNaverMember(MemberVO memberVO) {
+		return null;
+	}
+	public void joinNaverMember(MemberVO memberVO) {
+		
+	}
 
-//	// 로그인 엑세스 토큰
+	// 로그인 엑세스 토큰
 //	public NaverLoginVo requestNaverLoginAccessToken(Map<String, String> resValue, String grant_type){
 //        final String uri = UriComponentsBuilder
 //                .fromUriString("https://nid.naver.com")
@@ -82,8 +89,8 @@ public class MemberService {
 //                .bodyToMono(NaverLoginVo.class)
 //                .block();
 //    }
-//	
-//	// ----- 프로필 API 호출 (Unique한 id 값을 가져오기 위함) -----
+	
+	// ----- 프로필 API 호출 (Unique한 id 값을 가져오기 위함) -----
 //    public NaverLoginProfile requestNaverLoginProfile(NaverLoginVo naverLoginVo){
 //        final String profileUri = UriComponentsBuilder
 //                .fromUriString("https://openapi.naver.com")
