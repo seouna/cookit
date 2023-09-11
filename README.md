@@ -19,3 +19,13 @@ recipe api 받아와서 음식 레시피들을 불러온뒤 <br>
 
 
 ![image](https://github.com/seouna/cookit/assets/117568974/b30bf1ec-0625-456c-b4f5-6539080c243c)
+
+<h2> 로그인 </h2>
+<p>
+카카오 로그인 추가 <br>
+다음로그인 진행중<br>
+</p>
+
+
+ ![image](https://github.com/seouna/cookit/assets/117568974/77d3454c-8ce1-4fc3-826c-5f259b652bb6)
+
