@@ -97,30 +97,15 @@ function kakaoLogin() {
 					<a id="naverIdLogin_loginButton" class="btn-naver" ></a>
 				</div>
 				<script type="text/javascript">
-					var naver_id_login = new naver_id_login("blgJUSFIodH1QSzRZ4cw", "http://localhost:8080/cookit/naverLogin");
+					var naver_id_login = new naver_id_login("blgJUSFIodH1QSzRZ4cw", "http://localhost:8080/cookit/callback");
 					var state = naver_id_login.getUniqState();
 					naver_id_login.setState(state);
 					naver_id_login.setButton("green", 1,52);
+					naver_id_login.setDomain("http://localhost:8080");
 					naver_id_login.setPopup();
 					naver_id_login.init_naver_id_login();
 				</script>
 				
-				<!-- 네이버아디디로로그인 Callback페이지 처리 Script -->
-				<script type="text/javascript">
-					// 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
-					function naverSignInCallback() {
-						// naver_id_login.getProfileData('프로필항목명');
-						// 프로필 항목은 개발가이드를 참고하시기 바랍니다.
-						alert(naver_id_login.getProfileData('email'));
-						alert(naver_id_login.getProfileData('nickname'));
-						alert(naver_id_login.getProfileData('age'));
-					}
-				
-				
-					// 네이버 사용자 프로필 조회
-					naver_id_login.get_naver_userprofile("naverSignInCallback()");
-				</script>
-<!-- //네이버아디디로로그인 Callback페이지 처리 Script -->
 			</div>
 		</div>
       </div>

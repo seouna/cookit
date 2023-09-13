@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cook.cookit.mapper.MemberMapper;
-import com.cook.cookit.vo.MemberVO;
 
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
@@ -15,14 +14,6 @@ import net.nurigo.java_sdk.exceptions.CoolsmsException;
 @Service
 public class MemberService {
 	
-//	@Autowired
-//    private WebClient webClient;
-//
-//    @Value("${api.naver.client_id}")
-//    private String client_id;
-//
-//    @Value("${api.naver.client_secret}")
-//    private String client_secret;
 
 	@Autowired
 	private MemberMapper mapper;
@@ -60,54 +51,7 @@ public class MemberService {
 	public HashMap<String, String> kakaoMember(String email) {
 		return mapper.selectKakao(email);
 	}
-	public Object getNaverMember(MemberVO memberVO) {
-		return null;
-	}
-	public void joinNaverMember(MemberVO memberVO) {
-		
-	}
 
-	// 로그인 엑세스 토큰
-//	public NaverLoginVo requestNaverLoginAccessToken(Map<String, String> resValue, String grant_type){
-//        final String uri = UriComponentsBuilder
-//                .fromUriString("https://nid.naver.com")
-//                .path("/oauth2.0/token")
-//                .queryParam("grant_type", grant_type)
-//                .queryParam("client_id", this.client_id)
-//                .queryParam("client_secret", this.client_secret)
-//                .queryParam("code", resValue.get("code"))
-//                .queryParam("state", resValue.get("state"))
-//                .queryParam("refresh_token", resValue.get("refresh_token")) // Access_token 갱신시 사용
-//                .build()
-//                .encode()
-//                .toUriString();
-//
-//        return webClient
-//                .get()
-//                .uri(uri)
-//                .retrieve()
-//                .bodyToMono(NaverLoginVo.class)
-//                .block();
-//    }
-	
-	// ----- 프로필 API 호출 (Unique한 id 값을 가져오기 위함) -----
-//    public NaverLoginProfile requestNaverLoginProfile(NaverLoginVo naverLoginVo){
-//        final String profileUri = UriComponentsBuilder
-//                .fromUriString("https://openapi.naver.com")
-//                .path("/v1/nid/me")
-//                .build()
-//                .encode()
-//                .toUriString();
-//
-//        return webClient
-//                .get()
-//                .uri(profileUri)
-//                .header("Authorization", "Bearer " + naverLoginVo.getAccess_token())
-//                .retrieve()
-//                .bodyToMono(NaverLoginProfileResponse.class)
-//                .block()
-//                .getResponse(); // NaverLoginProfile 은 건네준다.
-//    }
 
 	
 }

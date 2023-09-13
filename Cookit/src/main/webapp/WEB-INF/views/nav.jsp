@@ -62,7 +62,7 @@ function logout() {
 				        <li><a href="login">로그인</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="myPage">${sessionScope.sId }마이페이지</a></li>
+						<li><a href="myPage">마이페이지</a></li>
 						<li><a href="javascript:logout()" data-reload="reload" class="">로그아웃</a></li>
 				        <li><a href="basket">장바구니</a></li>
 				        <c:if test="${sessionScope.sId eq 'admin' }">
