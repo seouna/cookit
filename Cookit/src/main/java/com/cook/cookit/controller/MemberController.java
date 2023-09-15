@@ -158,4 +158,8 @@ public class MemberController {
 		return "member/callback";
 	}
 
+	@GetMapping("myPage")
+	public String myPage() {
+		return "member/mypage";
+	}
 }
