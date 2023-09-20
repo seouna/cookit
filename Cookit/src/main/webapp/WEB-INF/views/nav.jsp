@@ -45,6 +45,13 @@ function logout() {
 		         <li class="nav-item">
 		          <a class="nav-link" href="market">마켓</a>
 		        </li>
+		        <c:choose>
+		        	<c:when test="${sessionScope.sId eq 'admin' }">
+			        	<li class="nav-item">
+				          <a class="nav-link" href="marketRegisterForm">마켓 상품등록</a>
+				        </li>
+		        	</c:when>
+		        </c:choose>
 		      </ul>
 <!-- 		      <form class="d-flex" role="search"> -->
 <!-- 		        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->

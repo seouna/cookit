@@ -33,7 +33,7 @@
         		<tr>
         			<th class="td_left">카테고리</th>
         			<td class="td_right">
-        				<select id="product_category">
+        				<select id="product_category" name="product_category">
         					<option value="">카테고리를 선택해주세요.</option>
         					<option value="과일">과일</option>
         					<option value="채소">채소</option>

@@ -60,14 +60,19 @@ public class MarketController {
 	// 마켓 상품등록 업로드
 	@PostMapping("/marketRegisterPro")
 	public String marketRegisterPro(
-		HttpSession session, Model model, @RequestParam HashMap<String, String> product, @RequestParam(value = "file", required = false) MultipartFile[] file) {
+		HttpSession session
+		, Model model
+		, @RequestParam HashMap<String, String> product
+		, @RequestParam(value = "file", required = false) MultipartFile[] file
+		, @RequestParam Map<String, String> category) {
 		String sId = (String)session.getAttribute("sId");
+		System.out.println("카테고리 넘어오나? " + category.get("product_category"));
 //		if(sId == null || !sId.equals("admin")) {
 //		model.addAttribute("msg", "권한이 없습니다.");
 //		return "fail_back";
 //	}
 //		System.out.println("product : " + product);
-		int insertCount = marketService.insertProduct(product);
+//		int insertCount = marketService.insertProduct(product);
 //		System.out.println("file : " + file);
 		
 		// 파일업로드 시작
@@ -112,6 +117,9 @@ public class MarketController {
 				}
 			}
 		}
+		
+		//product테이블 삽입
+		int insertCount = marketService.insertProduct(product);
 		
 		if(insertCount > 0) {
 //			model.addAttribute("msg", "등록이 완료되었습니다.");

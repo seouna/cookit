@@ -10,13 +10,16 @@
 
 	<!-- 마켓상품등록 -->
 	<insert id="insertProduct"> 
+	<selectKey keyProperty="product_code" resultType="int" order="BEFORE">
+			SELECT IFNULL(MAX(product_code), 0) FROM product
+	</selectKey>
 		INSERT
 			INTO product
 			VALUES (
-				'code',
+				#{product_code} + 1,
 				#{product_name}, 
 				#{product_category},
-				'file',
+				'file_idx',
 				#{product_price}
 			)
 	</insert>

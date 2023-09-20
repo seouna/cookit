@@ -178,6 +178,11 @@ a{
     margin: 80px auto;
 }
 
+.recipeCategory li:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(117, 87, 75);
+}
+
 .selOff {
     box-sizing: border-box;
     padding: 12px 8px;

@@ -35,18 +35,15 @@
 	
 		<div class="recipe-container">
 			<div class="recipeTit"><h1>OUR MARKET</h1><h2>COOKIT에서 재료를 구매해 보세요.</h2></div>
-			<!-- 임시링크 -->
-			<div class=""><a href="marketRegisterForm">마켓 상품등록</a></div>
-			<!-- 여기까지 -->
-			<ul class="recipeCategory">
-				<li class="selOff">모두보기</li>
-				<li class="selOn">과일</li>
-				<li class="selOff">채소</li>
-				<li class="selOff">쌀/잡곡/견과</li>
-				<li class="selOff">정육/계란류</li>
-				<li class="selOff">수산물/건해산</li>
-				<li class="selOff">우유/유제품</li>
-				<li class="selOff">양념/오일</li>
+			<ul id="recipeCategory" class="recipeCategory">
+				<li class="selOff" id="all">모두보기</li>
+				<li class="selOff" id="fruit">과일</li>
+				<li class="selOff" id="vegetable">채소</li>
+				<li class="selOff" id="rice">쌀/잡곡/견과</li>
+				<li class="selOff" id="meat">정육/계란류</li>
+				<li class="selOff" id="seafood">수산물/건해산</li>
+				<li class="selOff" id="milk">우유/유제품</li>
+				<li class="selOff" id="seasoning">양념/오일</li>
 			</ul>
 			
 			<div class="row row-cols-1 row-cols-md-4 g-4">
@@ -70,5 +67,22 @@
 </div>
 
 <jsp:include page="../footer.jsp" />
+<script type="text/javascript">
+	var categoryItems = document.querySelectorAll("#recipeCategory li");
+	
+	categoryItems.forEach(function(item) {
+	    item.addEventListener("click", function() {
+	    	// 카테고리 css변경(class변경)
+	        categoryItems.forEach(function(otherItem) {
+	            otherItem.classList.remove("selOn");
+	            otherItem.classList.add("selOff");
+	        });
+	        this.classList.remove("selOff");
+	        this.classList.add("selOn");
+	        
+	    });
+	});
+
+</script>
 </body>
 </html>
